@@ -1,0 +1,8 @@
+{
+    "extPhantom": "phantom-22.8.22.1",
+    "extMetamask": "metamask-10.18.4",
+    "extCoinbase": "coinbase-2.30.2",
+    "urlPhantom": "chrome-extension://bfnaelmomeimhlpmgjnjophhpkkoljpa/onboarding.html",
+    "urlMetamask": "chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/home.html#initialize/create-password/import-with-seed-phrase",
+    "urlCoinbase": "chrome-extension://hnfanknocfeofbddgcijnmhnfnkdnaad/index.html?launchedForOnboarding=true"
+}

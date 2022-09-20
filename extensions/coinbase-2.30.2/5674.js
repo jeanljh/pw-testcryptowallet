@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcb_wallet_extension=self.webpackChunkcb_wallet_extension||[]).push([[5674],{35674:(n,e,t)=>{t.r(e),t.d(e,{checkEthAddressEquality:()=>d});var s=t(62197),a=t.n(s),i=t(46101),c=t(27242),r=t(36129),u=t(36794),l=t(20805);async function o(n){const e=await(0,r.o9)(n);return(0,u.x)(e,(0,i.S3)(new(a())(0)))}async function w(){return(await(0,l.Z)((0,i.gB)(c.m.whitelisted.ETHEREUM_MAINNET))).find((n=>n.index.isZero()))?.address}async function d(n){const[e,t]=await Promise.all([o(n),w()]);return e===t}}}]);
+//# sourceMappingURL=5674.js.map
