@@ -16,8 +16,8 @@
   "author": "jean",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.25.2",
-    "playwright": "^1.25.2",
-    "typescript": "^4.8.3"
+    "@playwright/test": "^1.29.1",
+    "playwright": "^1.29.1",
+    "typescript": "^4.9.4"
   }
 }
