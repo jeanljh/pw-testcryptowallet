@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
 on:
@@ -8,12 +6,10 @@ on:
   pull_request:
     branches: [ main, master ]
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 #   schedule:
 #   - cron: '0 0 * * *'
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   test:
     timeout-minutes: 60
@@ -35,7 +31,7 @@ jobs:
       run: npx playwright install-deps
     - name: run npx playwright test 🛎️
       run: xvfb-run --auto-servernum -- npm test
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       if: always()
       with:
         name: playwright-report
@@ -45,7 +41,7 @@ jobs:
       if: ${{always()}}
       run: pwd & ls
     - name: deploy to github pages 🚀
-      uses: JamesIves/github-pages-deploy-action@v4.3.3
+      uses: JamesIves/github-pages-deploy-action@v4
       if: always()
       with:
         branch: gh-pages

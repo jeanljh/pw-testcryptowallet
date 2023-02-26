@@ -7,8 +7,8 @@ export default class Home {
         this.page = page
     }
 
-    btnConnect = () => this.page.locator('header button[class$=BorderedButton_btn__nenER]')
-    tabNetwork = (network: string) => this.page.locator('span.me-tab2-title', {hasText: network})
+    btnConnect = () => this.page.getByRole('button', { name: 'Connect Wallet' })
+    tabNetwork = (network: string) => this.page.locator(`span >> text="${network}"`)
     btnWallet = (wallet: string) => this.page.locator('button span', {hasText: wallet})
 
     async navHome () {
