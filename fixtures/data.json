@@ -1,5 +1,5 @@
 {
-    "extPhantom": "phantom-22.8.22.1",
+    "extPhantom": "phantom-23.4.0.0",
     "extMetamask": "metamask-10.18.4",
     "extCoinbase": "coinbase-2.30.2",
     "urlPhantom": "chrome-extension://bfnaelmomeimhlpmgjnjophhpkkoljpa/onboarding.html",
