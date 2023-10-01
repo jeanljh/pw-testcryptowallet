@@ -18,7 +18,7 @@ jobs:
     - name: setup node
       uses: actions/setup-node@v3
     - name: create json
-      uses: jsdaniell/create-json@1.1.2
+      uses: jsdaniell/create-json@v1.2.2
       with:
         name: "credentials.json"
         json: ${{ secrets.CREDENTIALS }}
