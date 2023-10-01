@@ -1,0 +1,7 @@
+.gitignore
+.prettierignore
+.prettierrc
+*-results
+*-report
+extensions
+package*.json

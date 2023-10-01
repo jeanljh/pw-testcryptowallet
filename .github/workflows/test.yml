@@ -1,9 +1,9 @@
-name: CI
+name: test
 
 on:
-  push:
-    branches:
-    - "*"
+  pull_request:
+    # branches:
+    # - "*"
   workflow_dispatch:
 #   schedule:
 #   - cron: '0 0 * * *'
@@ -13,8 +13,10 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    - name: checkout repo
+      uses: actions/checkout@v3
+    - name: setup node
+      uses: actions/setup-node@v3
     - name: create json
       uses: jsdaniell/create-json@1.1.2
       with:
@@ -23,24 +25,25 @@ jobs:
         dir: 'fixtures/'       
     - name: run npm ci
       run: npm ci
-    - name: run npm install 📦
+    - name: install dependencies
       run: npm install
-    - name: run npx playwright install 📦
-      run: npx playwright install-deps
-    - name: run npx playwright test 🛎️
+    - name: install playwright
+      run: npx playwright install --with-deps
+    - name: run playwright test
       run: xvfb-run --auto-servernum -- npm test
-    - uses: actions/upload-artifact@v3
+    - name: upload report
       if: always()
+      uses: actions/upload-artifact@v3
       with:
         name: playwright-report
         path: playwright-report/
-        retention-days: 30
+        retention-days: 1
     - name: show directory
-      if: ${{always()}}
-      run: pwd & ls
-    - name: deploy to github pages 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
       if: always()
+      run: pwd & ls
+    - name: deploy to github pages
+      if: always()
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages
         folder: playwright-report

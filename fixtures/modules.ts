@@ -5,31 +5,31 @@ import Coinbase from '../pages/coinbase.page'
 import Home from '../pages/home.page'
 
 const test = base.extend<{
-    home: Home
-    walletExt: Phantom | Metamask | Coinbase
+	home: Home
+	walletExt: Phantom | Metamask | Coinbase
 }>({
-    walletExt: async ({wallet, browserContext, page}, use) => {
-        switch (wallet) {
-            case 'phantom':
-                const phantom = new Phantom(browserContext, page)
-                await phantom.login()
-                await use(phantom)
-                break;
-            case 'metamask':
-                const metamask = new Metamask(browserContext, page)
-                await metamask.login()
-                await use(metamask)
-                break;
-            case 'coinbase':
-                const coinbase = new Coinbase(browserContext, page)
-                await coinbase.login()
-                await use(coinbase)
-                break;
-        }
-    },
-    home: async ({page}, use) => {
-        await use(new Home(page))
-    },
+	walletExt: async ({ wallet, browserContext, page }, use) => {
+		switch (wallet) {
+			case 'phantom':
+				const phantom = new Phantom(browserContext, page)
+				await phantom.login()
+				await use(phantom)
+				break
+			case 'metamask':
+				const metamask = new Metamask(browserContext, page)
+				await metamask.login()
+				await use(metamask)
+				break
+			case 'coinbase':
+				const coinbase = new Coinbase(browserContext, page)
+				await coinbase.login()
+				await use(coinbase)
+				break
+		}
+	},
+	home: async ({ page }, use) => {
+		await use(new Home(page))
+	},
 })
 
 export default test
