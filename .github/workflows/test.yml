@@ -42,7 +42,7 @@ jobs:
       if: always()
       run: pwd & ls
     - name: deploy to github pages
-      if: always()
+      if: github.actor != 'dependabot[bot]'
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages
