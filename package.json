@@ -4,10 +4,13 @@
   "description": "example of web3 app connection with different crypto wallets (phantom, metamask, coinbase)",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test"
+    "test": "playwright test",
+    "report": "playwright show-report",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,json}\""
   },
   "keywords": [
-    "playwright"
+    "playwright",
+    "typescript"
   ],
   "repository": {
     "url": "https://github.com/jeanljh/pw-testcryptowallet.git",
@@ -16,8 +19,8 @@
   "author": "jean",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.32.3",
-    "playwright": "^1.32.3",
-    "typescript": "^5.0.4"
+    "@playwright/test": "^1.38.1",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
   }
 }
