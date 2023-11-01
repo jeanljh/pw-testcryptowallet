@@ -19,7 +19,7 @@
   "author": "jean",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.38.1",
+    "@playwright/test": "^1.39.0",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   }
