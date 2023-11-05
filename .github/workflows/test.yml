@@ -14,11 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: checkout repo
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: setup node
       uses: actions/setup-node@v3
     - name: create json
-      uses: jsdaniell/create-json@1.1.2
+      uses: jsdaniell/create-json@v1.2.2
       with:
         name: "credentials.json"
         json: ${{ secrets.CREDENTIALS }}
@@ -42,7 +42,7 @@ jobs:
       if: always()
       run: pwd & ls
     - name: deploy to github pages
-      if: always()
+      if: github.actor != 'dependabot[bot]'
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages

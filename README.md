@@ -1,6 +1,6 @@
 # pw-testcryptowallet
 
-[![CI](https://github.com/jeanljh/pw-testcryptowallet/actions/workflows/main.yml/badge.svg)](https://github.com/jeanljh/pw-testcryptowallet/actions/workflows/main.yml)
+[![test](https://github.com/jeanljh/pw-testcryptowallet/actions/workflows/test.yml/badge.svg)](https://github.com/jeanljh/pw-testcryptowallet/actions/workflows/test.yml)
 
 Example of web3 app connection with different crypto wallets (phantom, metamask, coinbase).
 
