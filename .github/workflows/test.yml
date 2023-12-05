@@ -2,8 +2,7 @@ name: test
 
 on:
   pull_request:
-    # branches:
-    # - "*"
+    branches: master
   workflow_dispatch:
 #   schedule:
 #   - cron: '0 0 * * *'
@@ -26,7 +25,7 @@ jobs:
     - name: install depencencies
       run: npm ci
     - name: install playwright dependencies
-      run: npx playwright install-deps
+      run: npx playwright install --with-deps
     - name: run playwright test
       run: xvfb-run --auto-servernum -- npm test
       env:
