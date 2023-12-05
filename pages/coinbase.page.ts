@@ -1,53 +1,70 @@
 import { BrowserContext, Page } from '@playwright/test'
 import { urlCoinbase } from '../fixtures/data.json'
-import { coinbase } from '../fixtures/credentials.json'
+import credentials from '../fixtures/config'
 
 export default class Coinbase {
-	readonly browserContext: BrowserContext
-	readonly page: Page
+  constructor(
+    readonly browserContext: BrowserContext,
+    readonly page: Page
+  ) {}
 
-	constructor(browserContext: BrowserContext, page: Page) {
-		this.browserContext = browserContext
-		this.page = page
-	}
+  get btnImportKey() {
+    return this.page.getByTestId('btn-import-existing-wallet')
+  }
+  get btnEnterKey() {
+    return this.page.getByTestId('btn-import-recovery-phrase')
+  }
+  get inputKey() {
+    return this.page.getByTestId('seed-phrase-input')
+  }
+  get btnImportWallet() {
+    return this.page.getByTestId('btn-import-wallet')
+  }
+  get inputPwd() {
+    return this.page.getByTestId('setPassword')
+  }
+  get inputPwdVerify() {
+    return this.page.getByTestId('setPasswordVerify')
+  }
+  get ckbTerms() {
+    return this.page.getByTestId('terms-and-privacy-policy')
+  }
+  get btnSubmit() {
+    return this.page.getByTestId('btn-password-continue')
+  }
+  get textWalletReady() {
+    return this.page.getByTestId('wallet-ready')
+  }
+  get btnConnect() {
+    return this.page.getByTestId('allow-authorize-button')
+  }
 
-	btnImportKey = () => this.page.locator('button[data-testid="btn-import-existing-wallet"]')
-	btnEnterKey = () => this.page.locator('button[data-testid="btn-import-recovery-phrase"]')
-	inputKey = () => this.page.locator('input[name="seed-phrase-input"]')
-	btnImportWallet = () => this.page.locator('button[data-testid="btn-import-wallet"]')
-	inputPwd = () => this.page.locator('input[data-testid="setPassword"]')
-	inputPwdVerify = () => this.page.locator('input[data-testid="setPasswordVerify"]')
-	ckbTerms = () => this.page.locator('input[data-testid="terms-and-privacy-policy"]')
-	btnSubmit = () => this.page.locator('button[data-testid="btn-password-continue"]')
-	textWalletReady = () => this.page.locator('h3[data-testid="wallet-ready"]')
-	btnConnect = () => this.page.locator('button[data-testid="allow-authorize-button"]')
+  /** coinbase onboarding */
+  async onboarding() {
+    await this.page.goto(urlCoinbase)
+    await this.page.waitForLoadState()
+    await this.btnImportKey.click()
+    await this.btnEnterKey.click()
+    await this.inputKey.fill(credentials.seedPhrase)
+    await this.btnImportWallet.click()
+    await this.inputPwd.fill(credentials.password)
+    await this.inputPwdVerify.fill(credentials.password)
+    await this.ckbTerms.check()
+    await this.btnSubmit.click()
+    await this.textWalletReady.waitFor()
+  }
 
-	/** login to coinbase */
-	async login() {
-		await this.page.goto(urlCoinbase)
-		await this.page.waitForLoadState()
-		await this.btnImportKey().click()
-		await this.btnEnterKey().click()
-		await this.inputKey().fill(coinbase.key)
-		await this.btnImportWallet().click()
-		await this.inputPwd().fill(coinbase.password)
-		await this.inputPwdVerify().fill(coinbase.password)
-		await this.ckbTerms().check()
-		await this.btnSubmit().click()
-		await this.textWalletReady().waitFor()
-	}
+  async initPage() {
+    const page = await this.browserContext.waitForEvent('page')
+    await page.setViewportSize({
+      width: 320,
+      height: 550,
+    })
+    return new Coinbase(this.browserContext, page)
+  }
 
-	async initPage() {
-		const page = await this.browserContext.waitForEvent('page')
-		await page.setViewportSize({
-			width: 320,
-			height: 550,
-		})
-		return new Coinbase(this.browserContext, page)
-	}
-
-	async confirm() {
-		const coinbase = await this.initPage()
-		await coinbase.btnConnect().click()
-	}
+  async confirm() {
+    const coinbase = await this.initPage()
+    await coinbase.btnConnect.click()
+  }
 }

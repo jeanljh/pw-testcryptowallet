@@ -1,54 +1,88 @@
 import { BrowserContext, Page } from '@playwright/test'
 import { urlMetamask } from '../fixtures/data.json'
-import { metamask } from '../fixtures/credentials.json'
+import credentials from '../fixtures/config'
 
 export default class Metamask {
-	readonly browserContext: BrowserContext
-	readonly page: Page
+  constructor(
+    readonly browserContext: BrowserContext,
+    readonly page: Page
+  ) {}
 
-	constructor(browserContext: BrowserContext, page: Page) {
-		this.browserContext = browserContext
-		this.page = page
-	}
+  get ckbOnboarding() {
+    return this.page.locator('#onboarding__terms-checkbox')
+  }
+  get btnImportWallet() {
+    return this.page.getByTestId('onboarding-import-wallet')
+  }
+  get btnNoThanks() {
+    return this.page.getByTestId('metametrics-no-thanks')
+  }
+  get btnConfirmSecretPhrase() {
+    return this.page.getByTestId('import-srp-confirm')
+  }
+  get inputCreatePassword() {
+    return this.page.getByTestId('create-password-new')
+  }
+  get inputConfirmPassword() {
+    return this.page.getByTestId('create-password-confirm')
+  }
+  get ckbTerms() {
+    return this.page.getByTestId('create-password-terms')
+  }
+  get btnImportMyWallet() {
+    return this.page.getByTestId('create-password-import')
+  }
+  get btnGotIt() {
+    return this.page.getByTestId('onboarding-complete-done')
+  }
+  get btnOk() {
+    return this.page.getByTestId('page-container-footer-next')
+  }
+  get btnNext() {
+    return this.page.getByTestId('pin-extension-next')
+  }
+  get btnDone() {
+    return this.page.getByTestId('pin-extension-done')
+  }
 
-	inputKey = () => this.page.locator('div.MuiFormControl-root #import-srp__srp-word-0')
-	inputKeyById = (id: number) => this.page.locator(`div.MuiFormControl-root #import-srp__srp-word-${id}`)
-	inputPwd = () => this.page.locator('#password')
-	inputPwdConfirm = () => this.page.locator('#confirm-password')
-	ckbTerms = () => this.page.locator('#create-new-vault__terms-checkbox')
-	btnSubmit = () => this.page.locator("button[type='submit']")
-	btnOk = (text: string) => this.page.locator(`button.btn-primary >> text='${text}'`)
+  inputWord = (id: number) => this.page.locator(`#import-srp__srp-word-${id}`)
 
-	/** login to metamask */
-	async login() {
-		await this.page.goto(urlMetamask)
-		await this.page.waitForLoadState()
-		const keys = metamask.key.split(' ')
-		for (let i = 0; i < keys.length; i++) {
-			await this.inputKeyById(i).fill(keys[i])
-		}
-		/** alternative way - write secret keys to clibboard and paste with keyboard command 'Control+V' */
-		// await this.page.evaluate(k => navigator.clipboard.writeText(k), data.key)
-		// await this.inputKey().press('Control+V')
-		await this.inputPwd().fill(metamask.password)
-		await this.inputPwdConfirm().fill(metamask.password)
-		await this.ckbTerms().click()
-		await this.btnSubmit().click()
-		await this.btnOk('All Done').click()
-	}
+  /** metamask onboarding */
+  async onBoarding() {
+    await this.page.goto(urlMetamask)
+    await this.page.waitForLoadState()
+    await this.ckbOnboarding.click()
+    await this.btnImportWallet.click()
+    await this.btnNoThanks.click()
+    const keys = credentials.seedPhrase.split(' ')
+    for (let i = 0; i < keys.length; i++) {
+      await this.inputWord(i).fill(keys[i])
+    }
+    /** alternative way - write secret keys to clibboard and paste with keyboard command 'Control+V' */
+    // await this.page.evaluate(k => navigator.clipboard.writeText(k), data.key)
+    // await this.inputWord(0).press('Control+V')
+    await this.btnConfirmSecretPhrase.click()
+    await this.inputCreatePassword.fill(credentials.password)
+    await this.inputConfirmPassword.fill(credentials.password)
+    await this.ckbTerms.click()
+    await this.btnImportMyWallet.click()
+    await this.btnGotIt.click()
+    await this.btnNext.click()
+    await this.btnDone.click()
+  }
 
-	async initPage() {
-		const page = await this.browserContext.waitForEvent('page')
-		await page.setViewportSize({
-			width: 320,
-			height: 550,
-		})
-		return new Metamask(this.browserContext, page)
-	}
+  async initPage() {
+    const page = await this.browserContext.waitForEvent('page')
+    await page.setViewportSize({
+      width: 320,
+      height: 550,
+    })
+    return new Metamask(this.browserContext, page)
+  }
 
-	async confirm() {
-		const metamask = await this.initPage()
-		await metamask.btnOk('Next').click()
-		await metamask.btnOk('Connect').click()
-	}
+  async confirm() {
+    const metamask = await this.initPage()
+    await metamask.btnOk.click()
+    await metamask.btnOk.click()
+  }
 }

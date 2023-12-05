@@ -9,38 +9,39 @@ on:
 #   - cron: '0 0 * * *'
 
 jobs:
-  test:
+  playwright-test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - name: checkout repo
+    - name: checkout
       uses: actions/checkout@v4
     - name: setup node
       uses: actions/setup-node@v3
-    - name: create json
-      uses: jsdaniell/create-json@v1.2.2
-      with:
-        name: "credentials.json"
-        json: ${{ secrets.CREDENTIALS }}
-        dir: 'fixtures/'       
-    - name: run npm ci
+    # - name: create json
+    #   uses: jsdaniell/create-json@v1.2.2
+    #   with:
+    #     name: "credentials.json"
+    #     json: ${{ secrets.CREDENTIALS }}
+    #     dir: 'fixtures/'       
+    - name: install depencencies
       run: npm ci
-    - name: install dependencies
-      run: npm install
-    - name: install playwright
-      run: npx playwright install --with-deps
+    - name: install playwright dependencies
+      run: npx playwright install-deps
     - name: run playwright test
       run: xvfb-run --auto-servernum -- npm test
-    - name: upload report
+      env:
+        SEED_PHRASE: ${{ secrets.SEED_PHRASE }}
+        PASSWORD: ${{ secrets.PASSWORD }}
+    - name: upload test report
       if: always()
       uses: actions/upload-artifact@v3
       with:
         name: playwright-report
-        path: playwright-report/
+        path: playwright-report
         retention-days: 1
-    - name: show directory
-      if: always()
-      run: pwd & ls
+    # - name: show directory
+    #   if: always()
+    #   run: pwd & ls
     - name: deploy to github pages
       if: github.actor != 'dependabot[bot]'
       uses: JamesIves/github-pages-deploy-action@v4

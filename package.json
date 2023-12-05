@@ -6,7 +6,7 @@
   "scripts": {
     "test": "playwright test",
     "report": "playwright show-report",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,json}\""
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json}\""
   },
   "keywords": [
     "playwright",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@playwright/test": "^1.39.0",
     "@types/node": "^20.8.10",
+    "dotenv": "^16.3.1",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   }
