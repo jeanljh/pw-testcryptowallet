@@ -51,7 +51,7 @@ export default class Phantom {
   async initPage() {
     const page = await this.browserContext.waitForEvent('page')
     await page.setViewportSize({
-      width: 320,
+      width: 350,
       height: 550,
     })
     return new Phantom(this.browserContext, page)

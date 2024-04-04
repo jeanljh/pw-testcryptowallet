@@ -57,7 +57,7 @@ export default class Coinbase {
   async initPage() {
     const page = await this.browserContext.waitForEvent('page')
     await page.setViewportSize({
-      width: 320,
+      width: 350,
       height: 550,
     })
     return new Coinbase(this.browserContext, page)

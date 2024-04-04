@@ -1,6 +1,6 @@
 {
   "extPhantom": "phantom-23.4.0.0",
-  "extMetamask": "metamask-11.6.2_0",
+  "extMetamask": "metamask-11.13.1_0",
   "extCoinbase": "coinbase-2.30.2",
   "urlPhantom": "chrome-extension://bfnaelmomeimhlpmgjnjophhpkkoljpa/onboarding.html",
   "urlMetamask": "chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/home.html#initialize/create-password/import-with-seed-phrase",

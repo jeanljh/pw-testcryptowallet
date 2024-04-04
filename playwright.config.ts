@@ -1,5 +1,6 @@
 import type { PlaywrightTestConfig } from '@playwright/test'
 import { TestWallet } from './fixtures/base'
+import { Wallet } from './fixtures/enums'
 import 'dotenv/config'
 
 /**
@@ -45,16 +46,16 @@ const config: PlaywrightTestConfig<TestWallet> = {
   },
   projects: [
     {
-      name: 'phantom',
-      use: { wallet: 'phantom' },
+      name: Wallet.Coinbase,
+      use: { wallet: Wallet.Coinbase },
     },
     {
-      name: 'metamask',
-      use: { wallet: 'metamask' },
+      name: Wallet.Metamask,
+      use: { wallet: Wallet.Metamask },
     },
     {
-      name: 'coinbase',
-      use: { wallet: 'coinbase' },
+      name: Wallet.Phantom,
+      use: { wallet: Wallet.Phantom },
     },
   ],
 }
