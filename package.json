@@ -19,7 +19,7 @@
   "author": "jean",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.44.1",
+    "@playwright/test": "^1.45.1",
     "@types/node": "^20.14.9",
     "dotenv": "^16.4.5",
     "prettier": "^3.3.2",
