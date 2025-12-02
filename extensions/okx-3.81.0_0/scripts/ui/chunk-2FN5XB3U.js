@@ -1,0 +1,2 @@
+import{Na as d}from"./chunk-2QHGKEME.js";import{D as o}from"./chunk-WU2LB6XB.js";import{k as i,q as f}from"./chunk-NUN72MDU.js";import{c as s,e as c}from"./chunk-EN2WHAVL.js";import{b as u}from"./chunk-73B6GL3S.js";import{f as e,o as a,q as r}from"./chunk-Y5OH3DDZ.js";a();r();var p=e(u()),m=e(d());c();f();var C=()=>{let t=(0,m.useDispatch)();return(0,p.useCallback)(async({id:n})=>{await s().finishRequest({id:n,type:o.REJECTED}),await i(t)},[t])},h=C;export{h as a};
+//# sourceMappingURL=chunk-2FN5XB3U.js.map

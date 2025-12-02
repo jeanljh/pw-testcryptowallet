@@ -1,0 +1,2 @@
+import{b as c}from"./chunk-WAIJPY5X.js";import{Na as _,o as a}from"./chunk-2QHGKEME.js";import{J as u,va as g}from"./chunk-XFTQD4B2.js";import{b as d}from"./chunk-73B6GL3S.js";import{f as m,o as t,q as o}from"./chunk-Y5OH3DDZ.js";t();o();var p=m(_());t();o();var S=e=>r=>r.metamask[e],f=e=>c(S(e));var A=()=>(0,p.useSelector)(a),E=f("selectedCurrency");t();o();var n=m(d());g();function k(e,r=u){let[s,C]=(0,n.useState)(e);return(0,n.useLayoutEffect)(()=>{r(e,s)||C(e)},[e,r,s]),s}var q=k;export{A as a,E as b,q as c};
+//# sourceMappingURL=chunk-MDBKHBHQ.js.map

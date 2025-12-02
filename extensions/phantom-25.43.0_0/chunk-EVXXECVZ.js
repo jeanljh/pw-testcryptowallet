@@ -1,0 +1,2 @@
+import{y as a}from"./chunk-5RCV3KPE.js";import{d as T}from"./chunk-LYTSCHVN.js";import{a as o,i as t,n as e}from"./chunk-NSVULBS3.js";t();e();var m=1e-5,u="0,0.[00000]",i="0,0.[00]a",_=1e6,f=o((A,r=u)=>{let n=new T(A);if(n.abs().isGreaterThan(0)&&n.abs().isLessThan(m))return`< ${n.isLessThan(0)?"-":""}${m}`;let s=(0,a.default)(n.toNumber());return r===u&&n.isGreaterThanOrEqualTo(_)?s.format(i):s.format(r)},"formatTokenAmount");export{f as a};
+//# sourceMappingURL=chunk-EVXXECVZ.js.map

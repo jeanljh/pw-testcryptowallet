@@ -8,7 +8,7 @@ import 'dotenv/config'
  */
 const config: PlaywrightTestConfig<TestWallet> = {
   /** Maximum time one test can run for. */
-  timeout: 60 * 1000,
+  timeout: 120 * 1000,
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
@@ -50,13 +50,13 @@ const config: PlaywrightTestConfig<TestWallet> = {
       use: { wallet: Wallet.Coinbase },
     },
     {
-      name: Wallet.Metamask,
-      use: { wallet: Wallet.Metamask },
-    },
-    {
       name: Wallet.Phantom,
       use: { wallet: Wallet.Phantom },
     },
+    {
+      name: Wallet.Okx,
+      use: { wallet: Wallet.Okx },
+    }
   ],
 }
 

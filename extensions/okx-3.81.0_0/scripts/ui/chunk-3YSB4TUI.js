@@ -1,0 +1,2 @@
+import{Na as q}from"./chunk-2QHGKEME.js";import{p,q as d}from"./chunk-NUN72MDU.js";import{d as u,e as c}from"./chunk-EN2WHAVL.js";import{b as n}from"./chunk-73B6GL3S.js";import{g as t,o as s,q as r}from"./chunk-Y5OH3DDZ.js";s();r();var{useCallback:f}=n(),{useDispatch:h}=q(),{getPromisifiedBackground:g}=(c(),t(u)),{forceUpdateLightState:_}=(d(),t(p)),k=()=>{let e=h();return f(async({id:o,result:a,error:i})=>{await g().finishRequest({id:o,result:a,error:i}),await _(e)},[e])},m=k;export{m as a};
+//# sourceMappingURL=chunk-3YSB4TUI.js.map

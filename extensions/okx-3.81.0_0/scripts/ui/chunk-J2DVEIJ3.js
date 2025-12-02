@@ -1,0 +1,2 @@
+import{a as s}from"./chunk-TWQ73ZDV.js";import{b as c}from"./chunk-S7VT2TWF.js";import{a as r}from"./chunk-3ZKJXYZ4.js";import{o,q as i}from"./chunk-Y5OH3DDZ.js";o();i();function h(){let a=c();return async(d,t)=>{let f=await r(t),{coinFeeList:u,...C}=f?.data?.info||{},l=t.coinId,n=(u||[]).find(({coinId:e})=>l===e);if(n){let{coin:e}=await a(n.coinId,!1);if(e){let{chainId:m,address:F}=e,g=await s({chainId:m,address:t.toAddr,contractAddress:F,type:d});return{info:C,feeCoin:n,fee:g?.data?.fee||"0"}}}return null}}var w=h;export{w as a};
+//# sourceMappingURL=chunk-J2DVEIJ3.js.map

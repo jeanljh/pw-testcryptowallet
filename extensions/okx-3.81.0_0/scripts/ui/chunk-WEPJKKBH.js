@@ -1,0 +1,2 @@
+import{a as m}from"./chunk-5A7EFNRM.js";import{f as i}from"./chunk-VJI6MZK4.js";import{Na as c}from"./chunk-2QHGKEME.js";import{f as u,o as r,q as n}from"./chunk-Y5OH3DDZ.js";r();n();var t=u(c());var C=()=>{let{currentNetworkUniqueId:e}=(0,t.useSelector)(i),o=(0,t.useSelector)(s=>m(s,{enableEmptyAccount:!0}));return o.length===1&&e===""?String(o[0].chainId):e};export{C as a};
+//# sourceMappingURL=chunk-WEPJKKBH.js.map

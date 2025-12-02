@@ -14,8 +14,11 @@ export default class Coinbase {
   get btnEnterKey() {
     return this.page.getByTestId('btn-import-recovery-phrase')
   }
+  get btnAcknowledge() {
+    return this.page.getByTestId('modal-dialog-motion').getByRole('button', { name: /^Acknowledge$/ })
+  }
   get inputKey() {
-    return this.page.getByTestId('seed-phrase-input')
+    return this.page.getByTestId('secret-input')
   }
   get btnImportWallet() {
     return this.page.getByTestId('btn-import-wallet')
@@ -45,6 +48,7 @@ export default class Coinbase {
     await this.page.waitForLoadState()
     await this.btnImportKey.click()
     await this.btnEnterKey.click()
+    await this.btnAcknowledge.click({ timeout: 2000 }).catch(() => {})
     await this.inputKey.fill(credentials.seedPhrase)
     await this.btnImportWallet.click()
     await this.inputPwd.fill(credentials.password)

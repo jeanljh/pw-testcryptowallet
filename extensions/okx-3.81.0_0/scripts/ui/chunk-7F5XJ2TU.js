@@ -1,0 +1,2 @@
+import{a as t}from"./chunk-V7XA3BQU.js";import{b as s}from"./chunk-73B6GL3S.js";import{f as c,o as n,q as r}from"./chunk-Y5OH3DDZ.js";n();r();var e=c(s());function u({walletId:a}){let o=t(a);return(0,e.useCallback)(({type:i})=>{o(i==="from"?{trade:"contract_interaction",all_confirmation:"wallet_used_address"}:{trade:"contract_interaction",all_confirmation:"contract_address"})},[o])}export{u as a};
+//# sourceMappingURL=chunk-7F5XJ2TU.js.map

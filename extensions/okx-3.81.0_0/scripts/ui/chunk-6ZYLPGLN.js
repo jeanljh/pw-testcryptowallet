@@ -1,0 +1,3 @@
+import{c as k}from"./chunk-UQTI5PPO.js";import{s as d}from"./chunk-ZOKF3EKQ.js";import{a as f}from"./chunk-WRVJM3F3.js";import{Na as g}from"./chunk-2QHGKEME.js";import{b as R}from"./chunk-73B6GL3S.js";import{f as i,o as a,q as p}from"./chunk-Y5OH3DDZ.js";a();p();var r=i(R()),b=i(g());var v=20*1e3,B=o=>{let c=(0,b.useDispatch)(),n=d(void 0,o),t=(0,r.useRef)(null),l=f(),u=(0,r.useMemo)(()=>o||l,[o,l]),s=()=>{clearInterval(t.current),t.current=null},m=async()=>{try{let e=await n();if(!e?.getBlockNumber){s();return}let N=await e.getBlockNumber();c(k(N))}catch(e){console.log(`fetch block failed 
+${e}`)}};(0,r.useEffect)(()=>(u?.rpcUrl&&(m(),t.current=setInterval(()=>{m()},v)),s),[u?.rpcUrl,n,c])},_=B;export{_ as a};
+//# sourceMappingURL=chunk-6ZYLPGLN.js.map

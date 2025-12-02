@@ -1,0 +1,2 @@
+import{o as t,q as N}from"./chunk-Y5OH3DDZ.js";t();N();var O={ERC721:"ERC721",ERC1155:"ERC1155",CRYPTOPUNKS:"CRYPTOPUNKS",Metaplex:"Metaplex",Ordinals:"Ordinals",UNKNOWN:"UNKNOWN",DOGINALS:"DOGINALS",ATOMICAL:"ATOMICAL",FractalOrdinals:"FractalOrdinals"},a=10,_={[O.ERC721]:1,[O.ERC1155]:2,[O.CRYPTOPUNKS]:3,[O.Metaplex]:4,[O.Ordinals]:5,[O.DOGINALS]:8,[O.ATOMICAL]:9,[O.FractalOrdinals]:11},n=Object.entries(_).reduce((e,[r,T])=>(e[T]=r,e),{});export{O as a,a as b,_ as c,n as d};
+//# sourceMappingURL=chunk-VUHYFIVA.js.map

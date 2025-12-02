@@ -1,0 +1,2 @@
+import{K as d,q as t}from"./chunk-VZKEX7KP.js";import{o as n,q as r}from"./chunk-Y5OH3DDZ.js";n();r();d();var m=90;function g(e=t.subtract(m,"d")){let a=t.set({y:e.getFullYear(),M:e.getMonth()+1,d:e.getDate(),h:0,m:0,s:0,ms:0}),o=new Date,s=t.set({y:o.getFullYear(),M:o.getMonth()+1,d:o.getDate(),h:0,m:0,s:0,ms:0});return{stringDates:[t.format(a,"yyyy-MM-dd"),t.format(s,"yyyy-MM-dd")],dates:[a,s]}}export{g as a};
+//# sourceMappingURL=chunk-HGC2KGIM.js.map

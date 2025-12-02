@@ -1,0 +1,2 @@
+import{k as s,l as u}from"./chunk-YIFLUVTR.js";import{o as a,q as o}from"./chunk-Y5OH3DDZ.js";a();o();u();var m={light:"light",dark:"dark"},L={bannerList:[]},c=s({name:"activityBanners",initialState:L,reducers:{setBannerList:(e,d)=>{let{allData:n,closedBanners:i,theme:g}=d.payload,r=n;i?.length>0&&(r=n.filter(t=>!i.find(l=>l===t.id))),e.bannerList=r.map(t=>({...t,img:g===m.dark?t.nightLogo:t.dayLogo}))}}}),{setBannerList:v}=c.actions,f=c.reducer,p=e=>e.activityBanners.bannerList;export{v as a,f as b,p as c};
+//# sourceMappingURL=chunk-EDWL2MSA.js.map

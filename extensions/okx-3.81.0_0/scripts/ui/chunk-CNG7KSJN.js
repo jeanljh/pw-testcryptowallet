@@ -1,0 +1,2 @@
+import{Na as a,ba as c}from"./chunk-2QHGKEME.js";import{f as s,o as r,q as u}from"./chunk-Y5OH3DDZ.js";r();u();var m=s(a());function d(){let o=(0,m.useSelector)(c),t=o?.map(e=>(e.walletIdentities??[]).length)?.reduce((e,i)=>e+i,0);return{keyringIdentities:o,accountAmount:t,remainAccountAmount:Math.max(1e3-t,0),maxAccountAmount:1e3,canAddAccount:t<1e3}}var f=d;export{f as a};
+//# sourceMappingURL=chunk-CNG7KSJN.js.map

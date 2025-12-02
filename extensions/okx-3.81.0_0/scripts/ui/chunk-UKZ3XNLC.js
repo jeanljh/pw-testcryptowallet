@@ -1,0 +1,2 @@
+import{j as c,q as f}from"./chunk-NUN72MDU.js";import{c as i,f as p}from"./chunk-BFWVIVOY.js";import{c as a,e as u}from"./chunk-EN2WHAVL.js";import{o as n,q as m}from"./chunk-Y5OH3DDZ.js";n();m();p();f();u();function q(t,s,o=""){return async e=>{try{await a().approvePermissionsRequest(t,s,o)}catch(r){e(i(r.message))}}}function w(t,s,o){return async e=>{try{return await a().rejectPermissionsRequest(t,s,o),await c(e)}catch(r){throw e(i(r.message)),r}}}export{q as a,w as b};
+//# sourceMappingURL=chunk-UKZ3XNLC.js.map

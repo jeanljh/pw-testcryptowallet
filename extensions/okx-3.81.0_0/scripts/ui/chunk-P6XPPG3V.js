@@ -1,0 +1,2 @@
+import{e as s}from"./chunk-3ZKJXYZ4.js";import{k as n}from"./chunk-U7IWD6UB.js";import{Na as x,aa as a}from"./chunk-2QHGKEME.js";import{bc as o,nc as d}from"./chunk-COF7YKSN.js";import{f as p,o as e,q as r}from"./chunk-Y5OH3DDZ.js";e();r();var i=p(x());d();var g=()=>{let t=(0,i.useSelector)(a),l=n(t);return async m=>{let u=l?.serverWalletType,c={txSource:o.NORMAL,accountId:t,walletType:u,...m};return await s(c,{walletSignParams:{needWalletSign:!0,walletId:t}})}};export{g as a};
+//# sourceMappingURL=chunk-P6XPPG3V.js.map

@@ -1,7 +1,7 @@
 export enum Wallet {
     Coinbase = 'coinbase',
-    Metamask = 'metamask',
-    Phantom = 'phantom'
+    Okx = 'okxwallet',
+    Phantom = 'phantom',
 }
 
 export enum Network {

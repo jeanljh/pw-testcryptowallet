@@ -1,0 +1,2 @@
+import{a as s}from"./chunk-JSVF3ZQH.js";import{b as p}from"./chunk-SQUA6K5B.js";import{Na as v}from"./chunk-2QHGKEME.js";import{b as u}from"./chunk-73B6GL3S.js";import{f as o,o as e,q as t}from"./chunk-Y5OH3DDZ.js";e();t();var i=o(u()),m=o(v());var k=()=>{let c=(0,m.useSelector)(p),r=s(c);return(0,i.useMemo)(()=>(r||[]).filter(n=>n.blackTagType),[r])};export{k as a};
+//# sourceMappingURL=chunk-HCR7NOZ2.js.map

@@ -8,44 +8,47 @@ export default class Phantom {
     readonly page: Page
   ) {}
 
-  get btnImportKey() {
-    return this.page.getByTestId('import-recovery-phrase-button')
+  get btnHaveWallet() {
+    return this.page.getByText('I already have a wallet')
   }
-  get inputPwdConfirm() {
-    return this.page.locator('input[name="confirmPassword"]')
+  get btnImportPhrase() {
+    return this.page.getByText('Import Recovery Phrase')
   }
   get inputPwd() {
     return this.page.locator('input[name="password"]')
   }
+  get inputPwdConfirm() {
+    return this.page.locator('input[name="confirmPassword"]')
+  }
   get ckbTerms() {
     return this.page.getByTestId('onboarding-form-terms-of-service-checkbox')
-  }
-  get textShortcut() {
-    return this.page.locator('p >> text="Keyboard shortcut"')
   }
   get btnConnect() {
     return this.page.locator('button[type="submit"]')
   }
 
-  inputKeyById = (id: Number) => this.page.locator(`input[data-testid='secret-recovery-phrase-word-input-${id}']`)
-  btnOk = (text: string) => this.page.locator('button[type="submit"]', { hasText: text })
+  inputKeyById = (id: Number) => this.page.getByTestId(`secret-recovery-phrase-word-input-${id}`)
+  btnOk = (text: string) => this.page.getByRole('button', { name: new RegExp(`^${text}$`) })
+
 
   /** phantom onboarding */
   async onboarding() {
     await this.page.goto(urlPhantom)
     await this.page.waitForLoadState()
-    await this.btnImportKey.click()
+    await this.btnHaveWallet.click()
+    await this.btnImportPhrase.click()
     const keys = credentials.seedPhrase.split(' ')
     for (let i = 0; i < keys.length; i++) {
       await this.inputKeyById(i).fill(keys[i])
     }
     await this.btnOk('Import Wallet').click()
-    await this.btnOk('Import Selected Accounts').click()
+    await this.btnOk('Continue').click()
     await this.inputPwd.fill(credentials.password)
     await this.inputPwdConfirm.fill(credentials.password)
-    await this.ckbTerms.check()
+    await this.ckbTerms.click()
     await this.btnOk('Continue').click()
-    await this.textShortcut.waitFor()
+    await this.page.getByPlaceholder('username').waitFor({ timeout: 3000 }).catch(() => {})
+    await this.btnOk('Continue').click({ timeout: 3000 }).catch(() => {})
   }
 
   async initPage() {

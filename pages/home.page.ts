@@ -4,34 +4,29 @@ import { Network } from '../fixtures/enums'
 export default class Home {
   constructor(readonly page: Page) {}
 
-  get btnClosePopup() {
-    return this.page.locator('[data-test-id="modal-close"]')
-  }
   get btnConnect() {
-    return this.page.getByRole('button', { name: 'Connect Wallet' })
+    return this.page.getByRole('button', { name: /^Connect Wallet$/ })
   }
-  tabNetwork = (network: string) => this.page.locator(`span >> text="${network}"`)
-  btnWallet = (wallet: string) => this.page.locator('button span', { hasText: wallet })
+  get btnLogin() {
+    return this.page.locator('button[data-test-id="wallet-connect-button"]')
+  }
+  get btnViewAllWallets() {
+    return this.page.locator('button.list-item-button.list-tile', { hasText: /^View all wallets$/ })
+  }
+
+  btnWallet = (wallet: string) => this.page.getByTestId('wallet-icon-' + wallet)
+  btnNetwork = (network: string) => this.page.getByTestId('iconic-' + network)
 
   async navHome() {
-    await (await this.page.goto(''))?.finished()
+    await this.page.bringToFront()
+    await this.page.goto('')
   }
 
   async connectWallet(wallet: string) {
-    await this.btnConnect.click()
-    switch (wallet) {
-      case 'coinbase':
-        await this.tabNetwork(Network.Solana).click()
-        await this.btnWallet(wallet).click()
-        break
-      case 'metamask':
-        await this.tabNetwork(Network.Ethereum).click()
-        await this.btnWallet(wallet).click()
-        break
-      case 'phantom':
-        await this.tabNetwork(Network.Solana).click()
-        await this.btnWallet(wallet).click()
-        break
-    }
+    await this.page.waitForTimeout(3000)
+    await this.btnLogin.click()
+    await this.btnViewAllWallets.click()
+    await this.btnWallet(wallet).click()
+    await this.btnNetwork(Network.Ethereum).click()
   }
 }

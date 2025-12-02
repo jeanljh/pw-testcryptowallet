@@ -1,0 +1,2 @@
+import{o as _}from"./chunk-Z62JX42S.js";import{a as n,b as m}from"./chunk-COF7YKSN.js";import{f as d,o as t,q as r}from"./chunk-Y5OH3DDZ.js";t();r();var s=d(_());m();function c(){return(0,s.useMemoizedFn)(({from:e,error:a,to:i,coinId:o,transaction:u,txBytes:p})=>{n.captureEvent({tags:{address:e},message:"API_ERROR_build_sui_tx",contexts:{report:{info:JSON.stringify({from:e,coinId:o,to:i,error:a?.message,transaction:u,txBytes:p})}},exception:{values:[{type:"API_ERROR_build_sui_tx",value:e}]},level:"info"})})}var g=c;export{g as a};
+//# sourceMappingURL=chunk-XF2W6BUP.js.map

@@ -1,0 +1,2 @@
+import{a as o,b as l,c as a,d as h,e as u,f,g,h as C}from"./chunk-J3UBL564.js";import{o as i,q as r}from"./chunk-Y5OH3DDZ.js";i();r();var x=(n,s)=>{let t="";if(f(n))t=s.signature;else if(l(n)){let{transaction:e}=s;t=e?.txID}else if(g(n))t=s;else if(a(n))t=s;else if(h(n))t=s.txHash;else if(u(n))t=s.transaction_hash;else if(o(n))t=s;else if(C(n))t=s.txHash;else{let{hash:e,nonce:c}=s;return{result:e,nonce:c}}return{result:t}},p=x;export{p as a};
+//# sourceMappingURL=chunk-3MTWCI34.js.map

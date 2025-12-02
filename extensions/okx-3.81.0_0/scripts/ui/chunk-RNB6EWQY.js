@@ -1,0 +1,2 @@
+import{c as e}from"./chunk-KQ6OPOXD.js";import{A as r,K as _}from"./chunk-VZKEX7KP.js";import{b as s}from"./chunk-73B6GL3S.js";import{f as c,o as t,q as o}from"./chunk-Y5OH3DDZ.js";t();o();var m=c(s());_();var f=({icon:n,host:i,name:a})=>m.default.createElement(e,{title:r("extension_contract_interaction_maintitle_request_from"),summaryList:[{icon:{src:n},title:a,desc:i}]}),d=f;export{d as a};
+//# sourceMappingURL=chunk-RNB6EWQY.js.map

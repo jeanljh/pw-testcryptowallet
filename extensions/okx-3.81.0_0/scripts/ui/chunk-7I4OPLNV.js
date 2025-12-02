@@ -1,0 +1,2 @@
+import{ba as t}from"./chunk-INIQCRIO.js";import{B as e,n as s}from"./chunk-ZBDGRK4Q.js";import{o as r,q as o}from"./chunk-Y5OH3DDZ.js";r();o();e.init({project:t});e.session.init({project:t});var S=s()?e:e.getInstance(t),m=s()?e.session:e.session.getInstance(t);r();o();function i(){if(s())return!1;try{return window.self!==window.top}catch{return!1}}export{S as a,m as b,i as c};
+//# sourceMappingURL=chunk-7I4OPLNV.js.map

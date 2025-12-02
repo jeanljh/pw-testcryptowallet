@@ -1,0 +1,2 @@
+import{J as o,U as c}from"./chunk-S3FOFXM7.js";import{o as r,q as t}from"./chunk-Y5OH3DDZ.js";r();t();c();function a(e={},{type:n,value:s}){switch(n){case o:return{...e,current:s.messages,okdCurrent:s.okdMessages,dexCurrent:s.dexMessages,discoverCurrent:s.discoverMessages,defiCurrent:s.defiMessages};default:return e}}var d=e=>e.localeMessages.current,C=e=>e.localeMessages.okdCurrent,M=e=>e.localeMessages.dexCurrent;var l=e=>e.localeMessages.defiCurrent;export{a,d as b,C as c,M as d,l as e};
+//# sourceMappingURL=chunk-G7XOYBNH.js.map

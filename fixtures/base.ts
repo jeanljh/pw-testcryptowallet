@@ -1,8 +1,9 @@
 import { test as baseTest, BrowserContext, chromium, Page } from '@playwright/test'
-import { extPhantom, extMetamask, extCoinbase } from './data.json'
-import Phantom from '../pages/phantom.page'
-import Metamask from '../pages/metamask.page'
+import { extCoinbase, extOkx, extPhantom } from './data.json'
+import { Wallet } from './enums'
 import Coinbase from '../pages/coinbase.page'
+import Okx from '../pages/okx.page'
+import Phantom from '../pages/phantom.page'
 import Home from '../pages/home.page'
 
 export type TestWallet = {
@@ -13,21 +14,22 @@ export const test = baseTest.extend<{
   wallet: string
   browserContext: BrowserContext
   page: Page
-  walletExt: Phantom | Metamask | Coinbase
+  page2: Page
+  walletExt: Coinbase | Okx | Phantom
   home: Home
 }>({
   wallet: ['metamask', { option: true }],
   browserContext: async ({ wallet }, use) => {
     let extPath = '../extensions/'
     switch (wallet) {
-      case 'phantom':
-        extPath += extPhantom
-        break
-      case 'metamask':
-        extPath += extMetamask
-        break
-      case 'coinbase':
+      case Wallet.Coinbase:
         extPath += extCoinbase
+        break
+      case Wallet.Okx:
+        extPath += extOkx
+        break
+      case Wallet.Phantom:
+        extPath += extPhantom
         break
     }
     extPath = require('path').join(__dirname, extPath)
@@ -35,31 +37,33 @@ export const test = baseTest.extend<{
       args: [`--disable-extensions-except=${extPath}`, `--load-extension=${extPath}`],
     })
     await browserContext.grantPermissions(['clipboard-read', 'clipboard-write'])
-    await Promise.all([browserContext.waitForEvent('page'), browserContext.backgroundPages()[0]])
-    const [page, page2] = browserContext.pages()
-    await page.bringToFront()
-    await page2.close()
+    if (wallet !== Wallet.Coinbase) { 
+      await browserContext.waitForEvent('page')
+    }
     await use(browserContext)
   },
   page: async ({ browserContext }, use) => {
     await use(browserContext.pages()[0])
   },
-  walletExt: async ({ wallet, browserContext, page }, use) => {
+  page2: async ({ browserContext }, use) => {
+    await use(browserContext.pages()[1])
+  },
+  walletExt: async ({ wallet, browserContext, page, page2 }, use) => {
     switch (wallet) {
-      case 'phantom':
-        const phantom = new Phantom(browserContext, page)
-        await phantom.onboarding()
-        await use(phantom)
-        break
-      case 'metamask':
-        const metamask = new Metamask(browserContext, page)
-        await metamask.onBoarding()
-        await use(metamask)
-        break
-      case 'coinbase':
+      case Wallet.Coinbase:
         const coinbase = new Coinbase(browserContext, page)
         await coinbase.onboarding()
         await use(coinbase)
+        break
+      case Wallet.Okx:
+        const okx = new Okx(browserContext, page2)
+        await okx.onboarding()
+        await use(okx)
+        break
+      case Wallet.Phantom:
+        const phantom = new Phantom(browserContext, page2)
+        await phantom.onboarding()
+        await use(phantom)
         break
     }
   },

@@ -1,0 +1,2 @@
+import{k as r,l as p}from"./chunk-YIFLUVTR.js";import{o as s,q as o}from"./chunk-Y5OH3DDZ.js";s();o();p();var a=r({name:"approve",initialState:{approvedList:[],hasFetchedData:!1},reducers:{setApprovedList:(e,t)=>{e.approvedList=t.payload},setHasFetchedData:(e,t)=>{e.hasFetchedData=t.payload}}}),{actions:d,reducer:c}=a,h=c,l=e=>e[a.name].approvedList,m=e=>e[a.name].hasFetchedData,{setApprovedList:u,setHasFetchedData:v}=d;export{h as a,l as b,m as c,u as d,v as e};
+//# sourceMappingURL=chunk-SQUA6K5B.js.map

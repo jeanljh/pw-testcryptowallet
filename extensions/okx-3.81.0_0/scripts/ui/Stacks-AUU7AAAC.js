@@ -1,0 +1,2 @@
+import{o,q as r}from"./chunk-Y5OH3DDZ.js";o();r();var i={getAccount:async({provider:s})=>{let{address:t}=await s?.stacks?.connect();return t},signMessage:async({provider:s,message:t})=>{let{stacks:n}=s||{},{signature:a}=await n?.signMessage({message:t});return a},sendTransaction:async({provider:s,payload:t,cb:n,extraParams:a})=>{try{let{stacks:c}=s||{},{txHash:e}=await c?.signTransaction(t,a);return n&&n(e),e}catch(c){throw c}}},u=i;export{u as default};
+//# sourceMappingURL=Stacks-AUU7AAAC.js.map

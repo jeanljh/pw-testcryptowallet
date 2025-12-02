@@ -1,0 +1,2 @@
+import{b as c}from"./chunk-73B6GL3S.js";import{f as u,o as i,q as n}from"./chunk-Y5OH3DDZ.js";i();n();var t=u(c());var r=(0,t.createContext)({gasReturn:{status:null,activityId:null,activity:null,tip:null,clear:()=>{}}});function a(){return(0,t.useContext)(r)}function s(){return a()?.gasReturn||{}}function l({children:e,...o}){return t.default.createElement(r.Provider,{value:o},e)}export{s as a,l as b};
+//# sourceMappingURL=chunk-X43IZLHQ.js.map

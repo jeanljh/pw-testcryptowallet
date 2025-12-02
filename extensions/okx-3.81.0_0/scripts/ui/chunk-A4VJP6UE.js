@@ -1,0 +1,2 @@
+import{k as p,l as n}from"./chunk-YIFLUVTR.js";import{o,q as c}from"./chunk-Y5OH3DDZ.js";o();c();n();var r=p({name:"txConfirm",initialState:{approve:[],upgrade7702:[]},reducers:{setSpecialTxData:(e,a)=>{let t=a.payload.type;e[t]=a.payload.data},cleanSpecialTxData:(e,a)=>{let t=a.payload.type;e[t]=[]}}}),{actions:l,reducer:s}=r,x=s,m=e=>e[r.name],{setSpecialTxData:u,cleanSpecialTxData:y}=l;export{x as a,m as b,u as c,y as d};
+//# sourceMappingURL=chunk-A4VJP6UE.js.map

@@ -1,0 +1,2 @@
+import{o as s,q as i}from"./chunk-4J7XGGEQ.js";s();i();s();i();var t=class{constructor(e){this.getSessionInfoByTopic=()=>{};this.pairingFromUrl=async e=>{};this.disconnectSession=async()=>{};this.disconnectAllSession=async()=>{};this.sendResponse=async e=>{};this.opts=e}},n=t;n.init=async e=>t.getInstance(e),n.getOkxConnectClient=()=>t.instance,n.getInstance=e=>(t.instance||(t.instance=new t(e)),t.instance);var m=n;export{m as default};
+//# sourceMappingURL=OKXConnectClient-4VO4QFDP.js.map

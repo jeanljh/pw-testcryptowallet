@@ -1,0 +1,2 @@
+import{o as s,q as c}from"./chunk-4J7XGGEQ.js";s();c();var o={getAccount:async({provider:t})=>{let[a]=await t?.starknet?.enable();return a},signMessage:async({provider:t,message:a})=>(await t?.starknet?.enable(),await t?.starknet?.account?.signMessage(a)),sendTransaction:async({provider:t,payload:a,cb:n,abi:r})=>{await t?.starknet?.enable();let{transaction_hash:e}=await t?.starknet?.account?.execute(a,r);return n&&n(e),e}},g=o;export{g as default};
+//# sourceMappingURL=Starknet-IK64YQ5H.js.map

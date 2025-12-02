@@ -1,0 +1,2 @@
+import{s as r}from"./chunk-YP7AL7GO.js";import{a as _}from"./chunk-6N5VE5LT.js";import{a as l}from"./chunk-6YOUVTKE.js";import{f as e,o,q as t}from"./chunk-4J7XGGEQ.js";o();t();var n=e(l()),s=e(_());o();t();var m={icon:"_icon_13h51_1"};function d({className:i="",type:c="",size:f=12,...p}){let a={fontSize:`${f}px`};return n.default.createElement(r,{className:(0,s.default)(c,m.icon,i),style:a,...p})}export{d as a};
+//# sourceMappingURL=chunk-B65FDDLM.js.map

@@ -1,0 +1,2 @@
+import{G as g,J as i}from"./chunk-COF7YKSN.js";import{K as c,z as a}from"./chunk-VZKEX7KP.js";import{o as r,q as s}from"./chunk-Y5OH3DDZ.js";r();s();c();i();var n;async function o(){return n||(n=await a.chrome.init({project:g})),n}async function p(t,e){return(await o()).set(t,e)}async function S(t){return(await o()).get(t)}async function w(t){return(await o()).remove(t)}export{p as a,S as b,w as c};
+//# sourceMappingURL=chunk-JWVIZID6.js.map

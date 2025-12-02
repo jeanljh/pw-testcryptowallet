@@ -1,0 +1,2 @@
+import{o as i,q as c}from"./chunk-Y5OH3DDZ.js";i();c();var a={getAccount:async({provider:t})=>{let{address:n}=await t?.bitcoinSignet?.connect();return n},getPublicKey:async({provider:t})=>{let{publicKey:n}=await t?.bitcoinSignet?.connect();return n},signMessage:async({provider:t,message:n,address:e})=>await t?.bitcoinSignet?.signMessage(n,{from:e}),signPsbt:async({provider:t,psbtHex:n,account:e,type:s,...o})=>await t?.bitcoinSignet?.signPsbt(n,{from:e,type:s,...o})},u=a;export{u as default};
+//# sourceMappingURL=BtcSignet-ILCYSDN2.js.map

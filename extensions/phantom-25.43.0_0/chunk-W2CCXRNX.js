@@ -1,0 +1,2 @@
+import{m as n}from"./chunk-LYTSCHVN.js";import{a as i,i as r,n as s}from"./chunk-NSVULBS3.js";r();s();var o=i(t=>{if(!t.length)return n.t("validationUtilsPasswordIsRequired");if(t.length<8)return n.t("validationUtilsPasswordLength")},"validatePassword"),u=i((t,e)=>{if(t&&e!==t)return`${n.t("validationUtilsPasswordsDontMatch")}`},"validateConfirmPassword"),l=i((t,e)=>{if(e===t)return`${n.t("validationUtilsPasswordCantBeSame")}`},"validateNewPassword");export{o as a,u as b,l as c};
+//# sourceMappingURL=chunk-W2CCXRNX.js.map

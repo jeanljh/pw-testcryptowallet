@@ -1,0 +1,4 @@
+import{r as C}from"./chunk-PRM4QCVC.js";import{b as u}from"./chunk-I3QHDDEG.js";import{m}from"./chunk-FMF67RFP.js";import{V as p,a as S,r as T}from"./chunk-LYTSCHVN.js";import{a as t,g as A,i as a,n as c}from"./chunk-NSVULBS3.js";a();c();var o=A(S(),1);var k=3e3,G=m.div`
+  cursor: pointer;
+`,x=t(({copyString:d,children:f,alignment:y})=>{let{t:r}=T(),[e,b,i]=u(d),[g,s]=(0,o.useState)(!1),n=r(e?"pastParticipleCopied":"accountHeaderCopyToClipboard"),h=e?p.colors.legacy.spotBase:p.colors.legacy.black,E=t(()=>s(!0),"showTooltip"),L=t(()=>s(!1),"hideTooltip"),P=t(()=>{b(),i(!0)},"handleCopyToClipboard");return(0,o.useEffect)(()=>{let l;return e&&(l=setTimeout(()=>{i(!1)},k)),()=>{l&&clearTimeout(l)}},[e,i]),o.default.createElement(C,{label:n,ariaLabel:n,color:h,isVisible:g,triggerParams:{onMouseEnter:E,onMouseLeave:L},alignment:y},o.default.createElement(G,{onClick:P},f))},"CopyTooltip");export{x as a};
+//# sourceMappingURL=chunk-4X6Z5N6K.js.map

@@ -1,0 +1,2 @@
+import{a as f}from"./chunk-6YOUVTKE.js";import{f as _,o as r,q as l}from"./chunk-4J7XGGEQ.js";r();l();var M=_(f());var m=(t,e)=>e===1?3:e===0?2:t?0:1,i=t=>t===0?5:t===1?6:4,S=t=>t===1?9:t===0?8:7,T=({priorityMode:t,manualType:e,jitoIsSuccess:a,mevUnstableShowLevel:u})=>{let n=t==="auto",s=e===1,o=e===0;return(0,M.useMemo)(()=>t?n?m(a,u):o?i(u):s?S(u):0:10,[n,s,o,a,u,t])};export{T as a};
+//# sourceMappingURL=chunk-NVT6KZMA.js.map

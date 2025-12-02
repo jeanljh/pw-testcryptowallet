@@ -1,0 +1,2 @@
+import{e as s}from"./chunk-SNS3QUAD.js";import{a as u}from"./chunk-LBF75ZOB.js";import{b as d}from"./chunk-73B6GL3S.js";import{f as c,o,q as a}from"./chunk-Y5OH3DDZ.js";o();a();var i=c(d());var I=e=>{let l=(0,i.useMemo)(()=>e.flatMap(r=>r.walletIdentities.filter(t=>u(t)).map(t=>t.walletId)),[e]),{data:n=[]}=s(l);return{keyringIdentitiesWithSA:(0,i.useMemo)(()=>n.length?e.map(r=>({...r,walletIdentities:r.walletIdentities.map(t=>({...t,teeStatus:n.find(m=>m.accountId===t.walletId)?.teeStatus}))})):e,[e,n])}};export{I as a};
+//# sourceMappingURL=chunk-L2AWIRLM.js.map

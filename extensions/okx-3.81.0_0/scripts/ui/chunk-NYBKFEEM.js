@@ -1,0 +1,2 @@
+import{a as n,b as i}from"./chunk-XVSXMJ3S.js";import{g as p}from"./chunk-KQ66JTF7.js";import{a as u}from"./chunk-6XGS36TZ.js";import{Na as H}from"./chunk-2QHGKEME.js";import{b as A}from"./chunk-73B6GL3S.js";import{f as c,o as s,q as t}from"./chunk-Y5OH3DDZ.js";s();t();var e=c(A()),f=c(H());var l=()=>{let d=(0,f.useDispatch)(),[o]=i(n.hiddenAssets),[r,m]=(0,e.useState)(o),{impactHaptic:a}=u(),E=(0,e.useCallback)(async()=>{a(),m(_=>!_),await d(p(!r))},[d,r,a]);return(0,e.useEffect)(()=>{m(o)},[o]),[r,E]};s();t();export{l as a};
+//# sourceMappingURL=chunk-NYBKFEEM.js.map

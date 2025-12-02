@@ -1,0 +1,2 @@
+import{o as c,q as i}from"./chunk-4J7XGGEQ.js";c();i();var u={getAccount:async({provider:n})=>n?.tronWeb?.defaultAddress?.base58,signMessage:({provider:n,message:s})=>new Promise((o,t)=>{let{tronWeb:r}=n||{};r?.trx?.signMessage(s).then(e=>{o(e)}).catch(e=>{t(e)})}),sendTransaction:async({provider:n,payload:s,cb:o})=>{try{let{tronWeb:t}=n||{},r=await t?.trx?.sign(s),e=await t?.trx?.sendRawTransaction(r),{transaction:{txID:a}}=e||{};return o&&o(a),a}catch(t){throw t}}},x=u;export{x as default};
+//# sourceMappingURL=Tron-PUOFTFE7.js.map

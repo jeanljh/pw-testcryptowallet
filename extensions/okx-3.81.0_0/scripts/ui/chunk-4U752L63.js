@@ -1,0 +1,2 @@
+import{a,d as l,e as m}from"./chunk-GYBRFZKR.js";import{b as E}from"./chunk-73B6GL3S.js";import{f,o as i,q as r}from"./chunk-Y5OH3DDZ.js";i();r();var u=f(E());function k(){let{lastScannedRiskList:s}=m(),{hasPermission:n}=l(),{loading:x,error:d,extensionIds:t}=a(n,{listenInstall:!0,listenUninstall:!0}),e=(0,u.useMemo)(()=>s.filter(c=>t.has(c.id)),[s,t]),o=!x&&!d&&n&&e.length>0;return{hasRiskExtension:o,riskExtensions:o?e:[]}}var _=k;export{_ as a};
+//# sourceMappingURL=chunk-4U752L63.js.map

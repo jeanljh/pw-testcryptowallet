@@ -1,0 +1,2 @@
+import{a as r,b as t}from"./chunk-3DJSYHH7.js";import{k as o,l as d}from"./chunk-YIFLUVTR.js";import{o as e,q as n}from"./chunk-Y5OH3DDZ.js";e();n();d();var i={keyringId:null,amount:0},c=o({name:"batchAddAccount",initialState:i,reducers:{setKeyringId:t("keyringId"),setAmount:t("amount")}}),a=r(c.name),S=a("amount"),p=a("keyringId"),{actions:u,reducer:s}=c,{setAmount:y,setKeyringId:I}=u,f=s;export{S as a,p as b,y as c,I as d,f as e};
+//# sourceMappingURL=chunk-GNW7QJWA.js.map
