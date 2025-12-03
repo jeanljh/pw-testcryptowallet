@@ -11,7 +11,7 @@ export default class Home {
     return this.page.locator('button[data-test-id="wallet-connect-button"]')
   }
   get btnViewAllWallets() {
-    return this.page.locator('button.list-item-button.list-tile', { hasText: /^View all wallets$/ })
+    return this.page.locator('button.list-item-button.list-tile', { hasText: 'View all wallets' })
   }
 
   btnWallet = (wallet: string) => this.page.getByTestId('wallet-icon-' + wallet)
