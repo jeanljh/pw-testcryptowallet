@@ -19,10 +19,10 @@
   "author": "jean",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.58.2",
-    "@types/node": "^25.3.3",
-    "dotenv": "^17.3.1",
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0",
+    "dotenv": "^17.4.2",
     "prettier": "^3.8.3",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   }
 }
